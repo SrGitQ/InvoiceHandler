@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='search') search:
+      input#name.form-control(type='text', placeholder='search' name='search' required='true' value='')
+      ul
+    button.btn.bt-primary( type='submit' ) submit
+  
+  p
+    a(href='/item') add item
+
+  ul
+
+  each item in item_list
+    li #{item.article} - #{item.partida}
+  else
+    li no hay objetos
